@@ -1,0 +1,11 @@
+{
+	"name": "IT-DOC1",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"args": {
+			"VARIANT": "21",
+			"NODE_VERSION": "none"
+		}
+	},
+	"remoteUser": "vscode"
+}
