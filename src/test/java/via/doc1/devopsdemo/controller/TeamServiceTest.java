@@ -1,37 +1,31 @@
 package via.doc1.devopsdemo.controller;
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
+
 import via.doc1.devopsdemo.model.Task;
 import via.doc1.devopsdemo.model.TeamMember;
 import via.doc1.devopsdemo.service.TeamService;
-import static org.mockito.Mockito.*;
-import static org.junit.jupiter.api.Assertions.*;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class TeamServiceTest {
 
     private TeamService teamService;
 
-    @Mock
-    private TeamMember mockTeamMember;
-
-    @Mock
-    private Task mockTask;
-
     @BeforeEach
     public void setUp() {
-        MockitoAnnotations.openMocks(this);
         teamService = new TeamService();  
     }
 
     @Test
     public void testGetTeamMemberFound() {
         TeamMember member = new TeamMember("Member1", "Chase", "chase@pawpatrol.org", new ArrayList<>());
-        when(mockTeamMember.getId()).thenReturn("Member1");
 
         teamService.addTeamMember(member);
 
